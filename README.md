@@ -1,6 +1,6 @@
 # Apigee Snippets for VS Code
 
-**New Intitial Release 0.0.1**
+**New Initial Release 0.0.1**
 
 This extension for Visual Studio Code adds snippets for Apigee Policies.
 
