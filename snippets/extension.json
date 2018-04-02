@@ -1,0 +1,93 @@
+{
+	"Apigee JavaCallout": {
+		"prefix": "api-ext-javacallout",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",			
+			"<JavaCallout async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:JavaCallout}\">",
+    		"\t<DisplayName>${1:JavaCallout}</DisplayName>",
+			"\t<Properties/>",
+			"\t<ClassName>com.example.mypolicy.MyJavaCallout</ClassName>",
+		    "\t<ResourceURL>java://MyJavaCallout.jar</ResourceURL>",
+			"</JavaCallout>"
+		]
+	},	
+	"Apigee Script": {
+		"prefix": "api-ext-script",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",			
+			"<Script async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:Script}\">",
+    		"\t<DisplayName>${1:Script}</DisplayName>",
+			"\t<ResourceURL>py://myscript.py</ResourceURL>",
+			"\t<IncludeURL>py://myscript_dependency.py</IncludeURL>",
+			"</Script>"
+		]
+	},	
+	"Apigee Javascript": {
+		"prefix": "api-ext-javascript",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",			
+			"<Javascript async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:Javascript}\">",
+			"\t<DisplayName>${1:Javascript}</DisplayName>",
+			"\t<Properties/>",
+			"\t<ResourceURL>jsc://JavaScript-1.js</ResourceURL>",
+			"</Javascript>"
+		]
+	},
+	"Apigee ServiceCallout": {
+		"prefix": "api-ext-servicecallout",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",			
+			"<ServiceCallout async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:ServiceCallout}\">",
+    		"\t<DisplayName>${1:ServiceCallout}</DisplayName>",
+    		"\t<Properties/>",
+			"\t<Request clearPayload=\"true\" variable=\"myRequest\">",
+			"\t\t<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>",
+			"\t</Request>",
+			"\t<Response>calloutResponse</Response>",
+			"\t<HTTPTargetConnection>",
+			"\t\t<Properties/>",
+			"\t\t<URL>http://example.com</URL>",
+			"\t</HTTPTargetConnection>",
+			"</ServiceCallout>"
+		]
+	},
+	"Apigee FlowCallout": {
+		"prefix": "api-ext-flowcallout",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",			
+			"<FlowCallout async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:FlowCallout}\">",
+    		"\t<DisplayName>${1:FallCallout}</DisplayName>",
+			"\t<FaultRules/>",
+    		"\t<Properties/>",			
+			"\t<SharedFlowBundle>security-sharedflow</SharedFlowBundle>",
+			"</FlowCallout>"
+		]
+	},
+	"Apigee StatisticsCollector": {
+		"prefix": "api-ext-statisticscollector",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",			
+			"<StatisticsCollector async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:StatisticsCollector}\">",
+    		"\t<DisplayName>${1:StatisticsCollector}</DisplayName>",    		
+			"\t<Properties/>",
+			"\t<Statistics>",
+			"\t\t<Statistic name=\"name\" ref=\"\" type=\"STRING\">value</Statistic>",
+			"\t</Statistics>",
+			"</StatisticsCollector>"
+		]
+	},
+	"Apigee MessageLogging": {
+		"prefix": "api-ext-messagelogging",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",			
+			"<MessageLogging async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:MessageLogging}\">",
+			"\t<DisplayName>${1:MessageLogging}</DisplayName>",    		
+			"\t<Syslog>",
+			"\t\t<Message>Message.id = {request.header.id}</Message>",
+			"\t\t<Host>IP</Host>",
+			"\t\t<Port>556</Port>",
+			"\t</Syslog>",
+			"</MessageLogging>"
+		]
+	}
+}

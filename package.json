@@ -1,0 +1,43 @@
+{
+    "name": "apigee-vscode-snippets",
+    "displayName": "Apigee Snippets",
+    "description": "VScode snippets for Apigee Policies",
+    "version": "0.0.1",
+    "publisher": "Suresh",
+    "galleryBanner": {
+        "color": "#0273D4",
+        "theme": "dark"
+      },
+    "icon": "images/apigee.png",  
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hisureshk/apigee-vscode-snippets.git"
+      },    
+    "engines": {
+        "vscode": "^1.21.0"
+    },
+    
+    "categories": [
+        "Snippets", "Other"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "xml",
+                "path": "./snippets/trafficmanagement.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/security.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/mediation.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/extension.json"
+            }
+        ]
+    }
+}

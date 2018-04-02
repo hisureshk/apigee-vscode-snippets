@@ -1,0 +1,144 @@
+{
+	"Apigee Quota": {
+		"prefix": "api-tm-quota",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<Quota async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:Quota}\" type=\"calendar\">",
+			"\t<DisplayName>${1:Quota}</DisplayName>",
+			"\t<Properties/>",
+			"\t<Allow count=\"2000\" countRef=\"request.header.allowed_quota\"/>",
+			"\t<Interval ref=\"request.header.quota_count\">1</Interval>",
+			"\t<Distributed>false</Distributed>",
+			"\t<Synchronous>false</Synchronous>",
+			"\t<TimeUnit ref=\"request.header.quota_timeout\">month</TimeUnit>",
+			"\t<StartTime>${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}</StartTime>",
+			"\t<AsynchronousConfiguration>",
+			"\t\t<SyncIntervalInSeconds>20</SyncIntervalInSeconds>",
+			"\t\t<SyncMessageCount>5</SyncMessageCount>",
+			"\t</AsynchronousConfiguration>",
+			"</Quota>"
+		]
+	},
+	"Apigee SpikeArrest": {
+		"prefix": "api-tm-spikearrest",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",	
+			"<SpikeArrest async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:SpikeArrest}\">",
+			"\t<DisplayName>${1:SpikeArrest}</DisplayName>",
+			"\t<Properties/>",
+			"\t<Identifier ref=\"request.header.some-header-name\"/>",
+			"\t<MessageWeight ref=\"request.header.weight\"/>",
+			"\t<Rate>30ps</Rate>",
+			"</SpikeArrest>"		
+		]
+	},
+	"Apigee ConcurrentRatelimit": {
+		"prefix": "api-tm-concurrentratelimit",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",	
+			"<ConcurrentRatelimit async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:ConcurrentRateLimit}\">",
+			"\t<DisplayName>${1:ConcurrentRateLimit}</DisplayName>",
+			"\t<AllowConnections count=\"200\" ttl=\"5\"/>",
+			"\t<Distributed>true</Distributed>",
+			"\t<StrictOnTtl>false</StrictOnTtl>",
+			"\t<TargetIdentifier name=\"\"/>",
+			"</ConcurrentRatelimit>"		
+		]
+	},
+	"Apigee ResponseCache": {
+		"prefix": "api-tm-responsecache",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",	
+			"<ResponseCache async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:ResponseCache}\">",
+			"\t<DisplayName>${1:ResponseCache}</DisplayName>",
+			"\t<Properties/>",		
+			"\t<CacheKey>",
+			"\t\t<Prefix/>",
+			"\t\t<KeyFragment ref=\"request.uri\" type=\"string\"/>",
+			"\t</CacheKey>",
+			"\t<Scope>Exclusive</Scope>",
+			"\t<ExpirySettings>",
+			"\t\t<ExpiryDate/>",
+			"\t\t<TimeOfDay/>",
+			"\t\t<TimeoutInSec>3600</TimeoutInSec>",
+			"\t</ExpirySettings>",
+			"\t<SkipCacheLookup/>",
+			"\t<SkipCachePopulation/>",
+			"</ResponseCache>"
+		]
+	},
+	"Apigee LookupCache": {
+		"prefix": "api-tm-lookupcache",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",	
+			"<LookupCache async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:LookupCache}\">",
+			"\t<DisplayName>${1:LookupCache}</DisplayName>",
+			"\t<Properties/>",		
+			"\t<CacheKey>",
+			"\t\t<Prefix/>",
+			"\t\t<KeyFragment ref=\"\"/>",
+			"\t</CacheKey>",
+			"\t<CacheResource/>",
+			"\t<Scope>Exclusive</Scope>",
+			"\t<AssignTo>flowVar</AssignTo>",
+			"</LookupCache>"		
+		]
+	},
+	"Apigee PopulateCache": {
+		"prefix": "api-tm-populatecache",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",	
+			"<PopulateCache async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:PopulateCache}\">",
+			"\t<DisplayName>${1:PopulateCache}</DisplayName>",
+			"\t<Properties/>",		
+			"\t<CacheKey>",
+			"\t\t<Prefix/>",
+			"\t\t<KeyFragment ref=\"\"/>",
+			"\t</CacheKey>",
+			"\t<CacheResource/>",
+			"\t<Scope>Exclusive</Scope>",
+			"\t<ExpirySettings>",
+			"\t\t<TimeoutInSec>3600</TimeoutInSec>",
+			"\t</ExpirySettings>",
+			"\t<Source>flowVar</Source>",
+			"</PopulateCache>"
+		]
+	},
+	"Apigee InvalidateCache": {
+		"prefix": "api-tm-invalidatecache",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",	
+			"<InvalidateCache async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:InvalidateCache}\">",
+			"\t<DisplayName>${1:InvalidateCache}</DisplayName>",
+			"\t<Properties/>",		
+			"\t<CacheKey>",
+			"\t\t<Prefix/>",
+			"\t\t<KeyFragment ref=\"\"/>",
+			"\t</CacheKey>",
+			"\t<CacheResource/>",
+			"\t<Scope>Exclusive</Scope>",
+			"\t<CacheContext>",
+			"\t\t<APIProxyName/>",
+			"\t\t<ProxyName>default</ProxyName>",
+			"\t\t<TargetName>default</TargetName>",
+			"\t</CacheContext>",
+			"\t<PurgeChildEntries>false</PurgeChildEntries>",
+			"</InvalidateCache>"
+		]
+	},
+	"Apigee ResetQuota": {
+		"prefix": "api-tm-resetquota",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",	
+			"<ResetQuota async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:ResetQuota}\">",
+			"\t<DisplayName>${1:ResetQuota}</DisplayName>",
+			"\t<Properties/>",		
+			"\t<Quota name=\"quotaName\">",
+			"\t\t<Identifier name=\"identifierName\" ref=\"request.header.identifier\">",
+			"\t\t<Allow>100</Allow>",
+			"\t\t</Identifier>",
+			"\t</Quota>",
+			"</ResetQuota>"
+		]
+	}
+}

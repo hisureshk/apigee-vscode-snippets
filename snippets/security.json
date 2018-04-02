@@ -1,0 +1,274 @@
+{
+	"Apigee BasicAuthentication": {
+		"prefix": "api-sec-basicauthentication",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<BasicAuthentication async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:BasicAuthentication}\">",
+			"\t<DisplayName>${1:BasicAuthentication}</DisplayName>",
+			"\t<Operation>Encode</Operation>",
+			"\t<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>",
+			"\t<User ref=\"request.queryparam.username\"/>",
+			"\t<Password ref=\"request.queryparam.password\"/>",
+			"\t<AssignTo createNew=\"false\">request.header.Authorization</AssignTo>",
+			"\t<Source>request.header.Authorization</Source>",
+			"</BasicAuthentication>"
+		]
+	},
+	"Apigee XMLThreatProtection": {
+		"prefix": "api-sec-xmlthreatprotection",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<XMLThreatProtection async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:XMLThreatProtection}\">",
+			"\t<DisplayName>${1:XMLThreatProtection}</DisplayName>",
+			"\t<Properties/>",
+			"\t<NameLimits>",
+			"\t\t<Element>10</Element>",
+			"\t\t<Attribute>10</Attribute>",
+			"\t\t<NamespacePrefix>10</NamespacePrefix>",
+			"\t\t<ProcessingInstructionTarget>10</ProcessingInstructionTarget>",
+			"\t</NameLimits>",
+			"\t<Source>request</Source>",
+			"\t<StructureLimits>",
+			"\t\t<NodeDepth>5</NodeDepth>",
+			"\t\t<AttributeCountPerElement>2</AttributeCountPerElement>",
+			"\t\t<NamespaceCountPerElement>3</NamespaceCountPerElement>",
+			"\t\t<ChildCount includeComment=\"true\" includeElement=\"true\" includeProcessingInstruction=\"true\" includeText=\"true\">3</ChildCount>",
+			"\t</StructureLimits>",
+			"\t<ValueLimits>",
+			"\t\t<Text>15</Text>",
+			"\t\t<Attribute>10</Attribute>",
+			"\t\t<NamespaceURI>10</NamespaceURI>",
+			"\t\t<Comment>10</Comment>",
+			"\t\t<ProcessingInstructionData>10</ProcessingInstructionData>",
+			"\t</ValueLimits>",
+			"</XMLThreatProtection>"
+		]
+	},
+	"Apigee JSONThreatProtection": {
+		"prefix": "api-sec-jsonthreatprotection",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<JSONThreatProtection async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:JSONThreatProtection}\">",
+			"\t<DisplayName>${1:JSONThreatProtection}</DisplayName>",
+			"\t<Properties/>",
+			"\t<ArrayElementCount>20</ArrayElementCount>",
+			"\t<ContainerDepth>10</ContainerDepth>",
+			"\t<ObjectEntryCount>15</ObjectEntryCount>",
+			"\t<ObjectEntryNameLength>50</ObjectEntryNameLength>",
+			"\t<Source>request</Source>",
+			"\t<StringValueLength>500</StringValueLength>",
+			"</JSONThreatProtection>"
+		]
+	},
+	"Apigee RegularExpressionProtection": {
+		"prefix": "api-sec-regularexpressionprotection",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<RegularExpressionProtection async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:RegularExpressionProtection}\">",
+			"\t<DisplayName>${1:RegularExpressionProtection}</DisplayName>",
+			"\t<Properties/>",
+			"\t<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>",
+			"\t<JSONPayload>",
+			"\t\t<JSONPath>",
+			"\t\t\t<Pattern ignoreCase=\"false\">pattern</Pattern>",
+			"\t\t\t<Expression>expression</Expression>",
+			"\t\t</JSONPath>",
+			"\t</JSONPayload>",
+			"\t<URIPath>",
+			"\t\t<Pattern ignoreCase=\"false\">pattern</Pattern>",
+			"\t</URIPath>",
+			"\t<QueryParam name=\"qparam\">",
+			"\t\t<Pattern/>",
+			"\t</QueryParam>",
+			"\t<Header name=\"header\">",
+			"\t\t<Pattern/>",
+			"\t</Header>",
+			"\t<FormParam name=\"fparam\">",
+			"\t\t<Pattern/>",
+			"\t</FormParam>",
+			"\t<Variable name=\"myVariable\">",
+			"\t\t<Pattern/>",
+			"\t</Variable>",
+			"\t<Source>request</Source>",
+			"\t<XMLPayload>",
+			"\t\t<Namespaces/>",
+			"\t\t<XPath>",
+			"\t\t\t<Pattern ignoreCase=\"false\">pattern</Pattern>",
+			"\t\t\t<Expression>expression</Expression>",
+			"\t\t\t<Type>string</Type>",
+			"\t\t</XPath>",
+			"\t</XMLPayload>",
+			"</RegularExpressionProtection>"
+		]
+	},
+	"Apigee OAuthV2": {
+		"prefix": "api-sec-oauthv2",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<OAuthV2 async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:OAuthV2}\">",
+			"\t<DisplayName>${1:OAuthV2}</DisplayName>",
+			"\t<Properties/>",
+			"\t<Attributes/>",
+			"\t<ExternalAuthorization>false</ExternalAuthorization>",
+			"\t<Operation>VerifyAccessToken</Operation>",
+			"\t<SupportedGrantTypes/>",
+			"\t<GenerateResponse enabled=\"true\"/>",
+			"\t<Tokens/>",
+			"</OAuthV2>"
+		]
+	},
+	"Apigee GetOAuthV2Info": {
+		"prefix": "api-sec-getoauthv2info",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<GetOAuthV2Info async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:GetOAuthV2Info}\">",
+			"\t<DisplayName>${1:GetOAuthV2Info}</DisplayName>",
+			"\t<ClientId ref=\"{flow.variable}\">{client id}</ClientId>",
+			"\t<AccessToken ref=\"{flow.variable}\">{access token}</AccessToken>",
+			"\t<AuthorizationCode ref=\"{flow.variable}\">{authorization code}</AuthorizationCode>",
+			"\t<RefreshToken ref=\"{flow.variable}\">{refresh token}</RefreshToken>",
+			"</GetOAuthV2Info>"
+		]
+	},
+	"Apigee SetOAuthV2Info": {
+		"prefix": "api-sec-setoauthv2info",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<SetOAuthV2Info async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:SetOAuthV2Info}\">",
+			"\t<DisplayName>${1:SetOAuthV2Info}</DisplayName>",
+			"\t<AccessToken ref=\"request.queryparam.accessToken\"/>",
+			"\t<Attributes/>",
+			"</SetOAuthV2Info>"
+		]
+	},
+	"Apigee DeleteOAuthV2Info": {
+		"prefix": "api-sec-deleteoauthv2info",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<DeleteOAuthV2Info async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:DeleteOAuthV2Info}\">",
+			"\t<DisplayName>${1:DeleteOAuthV2Info}</DisplayName>",
+			"\t<Properties/>",			
+			"\t<AccessToken ref=\"request.header.token\"/>",
+			"\t<!--<AuthorizationCode ref=\"{flow.variable}\"/>-->",
+			"</DeleteOAuthV2Info>"
+		]
+	},
+	"Apigee VerifyAPIKey": {
+		"prefix": "api-sec-verifyapikey",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<VerifyAPIKey async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"${1:VerifyAPIKey}\">",
+			"\t<DisplayName>${1:VerifyAPIKey}</DisplayName>",
+			"\t<Properties/>",			
+			"\t<APIKey ref=\"request.queryparam.apikey\"/>",
+			"</VerifyAPIKey>"
+		]
+	},
+	"Apigee AccessControl": {
+		"prefix": "api-sec-accesscontrol",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<AccessControl async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\">${1:AccessControl}\">",
+			"\t<DisplayName>>${1:AccessControl}</DisplayName>",
+			"\t<Properties/>",			
+			"\t<IPRules noRuleMatchAction=\"ALLOW\">",
+			"\t\t<MatchRule action=\"ALLOW\">",
+            "\t\t\t<SourceAddress mask=\"32\">10.10.10.20</SourceAddress>",
+			"\t\t</MatchRule>",
+			"\t\t<MatchRule action=\"DENY\">",
+            "\t\t\t<SourceAddress mask=\"24\">10.10.10.20</SourceAddress>",
+			"\t\t</MatchRule>",
+			"\t</IPRules>",
+			"</AccessControl>"
+		]
+	},
+	"Apigee GenerateSAMLAssertion": {
+		"prefix": "api-sec-generatesamlassertion",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<GenerateSAMLAssertion async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\">${1:GenerationSAMLAssertion}\">",
+			"\t<DisplayName>>${1:GenerationSAMLAssertion}</DisplayName>",
+			"\t<KeyStore>",
+			"\t\t<Name ref=\"reference\">keystorename</Name>",
+			"\t\t<Alias ref=\"reference\">alias</Alias>",
+			"\t</KeyStore>",
+			"\t<Subject ref=\"reference\">subject</Subject>",
+			"\t<Issuer ref=\"reference\">issuer</Issuer>",
+			"\t<Template ignoreUnresolvedVariables=\"false\"/>",
+			"\t<OutputVariable>",
+			"\t\t<Message name=\"message\">",
+			"\t\t\t<Namespaces>",
+			"\t\t\t\t<Namespace prefix=\"test\">http://www.example.com/test</Namespace>",
+			"\t\t\t</Namespaces>",
+			"\t\t\t<XPath>/envelope/header</XPath>",
+			"\t\t</Message>",
+			"\t\t<FlowVariable name=\"assertion.content\"/>",
+			"\t</OutputVariable>",
+			"</GenerateSAMLAssertion>"
+		]
+	},
+	"Apigee ValidateSAMLAssertion": {
+		"prefix": "api-sec-validatesamlassertion",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<ValidateSAMLAssertion async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\">${1:ValidateSAMLAssertion}\">",
+			"\t<DisplayName>>${1:ValidateSAMLAssertion}</DisplayName>",
+			"\t<Source/>",
+			"\t<Description/>",
+			"\t<TrustStore/>",
+			"\t<RemoveAssertion>false</RemoveAssertion>",
+			"</ValidateSAMLAssertion>"
+		]
+	},
+	"Apigee GenerateJWT": {
+		"prefix": "api-sec-generatejwt",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<GenerateJWT async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\">${1:GenerationJWT}\">",
+			"\t<DisplayName>>${1:GenerationJWT}</DisplayName>",
+			"\t<Algorithm>HS256</Algorithm>",
+			"\t<SecretKey>",
+			"\t\t<Value ref=\"private.key\"/>",
+			"\t</SecretKey>",
+			"\t<Subject>subject-subject</Subject>",
+			"\t<Issuer>urn://apigee-edge-JWT-policy-test</Issuer>",
+			"\t<Audience>audience1,audience2</Audience>",
+			"\t<ExpiresIn>8h</ExpiresIn>",
+			"\t<AdditionalClaims>",
+			"\t\t<Claim name=\"additional-claim-name\" type=\"string\">additional-claim-value-goes-here</Claim>",
+			"\t</AdditionalClaims>",
+			"\t<OutputVariable>jwt-variable</OutputVariable>",
+			"</GenerateJWT>"
+		]
+	},
+	"Apigee VerifyJWT": {
+		"prefix": "api-sec-verifyjwt",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<VerifyJWT async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\">${1:VerifyJWT}\">",
+			"\t<DisplayName>>${1:VerifyJWT}</DisplayName>",
+			"\t<Algorithm>HS256</Algorithm>",
+			"\t<source>jwt-variable</source>",
+			"\t<SecretKey>",
+			"\t\t<Value ref=\"private.key\"/>",
+			"\t</SecretKey>",
+			"\t<Subject>subject-subject</Subject>",
+			"\t<Issuer>urn://apigee-edge-JWT-policy-test</Issuer>",
+			"\t<Audience>audience1,audience2</Audience>",
+			"\t<AdditionalClaims>",
+			"\t\t<Claim name=\"additional-claim-name\" type=\"string\">additional-claim-value-goes-here</Claim>",
+			"\t</AdditionalClaims>",
+			"</VerifyJWT>"
+		]
+	},
+	"Apigee DecodeJWT": {
+		"prefix": "api-sec-decodejwt",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+			"<DecodeJWT async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\">${1:DecodeJWT}\">",
+			"\t<DisplayName>>${1:DecodeJWT}</DisplayName>",
+			"\t<source>jwt-variable</source>",
+			"</DecodeJWT>"
+		]
+	}
+}
