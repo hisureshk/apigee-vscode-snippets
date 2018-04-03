@@ -40,7 +40,7 @@
             },
             {
                 "language": "xml",
-                "path": "./snippets/flows.json"
+                "path": "./snippets/flow.json"
             }
         ]
     }
