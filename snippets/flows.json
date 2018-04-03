@@ -1,0 +1,46 @@
+{
+	"Apigee Add Post Flow": {
+		"prefix": "api-flow-post",
+		"body": [
+            "<Flow name=\"${1:Flow}\">",
+            "\t<Description/>",
+            "\t<Request/>",
+            "\t<Response/>",
+            "\t<Condition>(proxy.pathsuffix MatchesPath \"{2}\") and (request.verb = \"POST\")</Condition>",
+            "</Flow>"
+        ]
+	},
+    "Apigee Add Get Flow": {
+		"prefix": "api-flow-get",
+		"body": [
+            "<Flow name=\"${1:Flow}\">",
+            "\t<Description/>",
+            "\t<Request/>",
+            "\t<Response/>",
+            "\t<Condition>(proxy.pathsuffix MatchesPath \"{2}\") and (request.verb = \"GET\")</Condition>",
+            "</Flow>"
+        ]
+	},
+	"Apigee Add Put Flow": {
+		"prefix": "api-flow-put",
+		"body": [
+            "<Flow name=\"${1:Flow}\">",
+            "\t<Description/>",
+            "\t<Request/>",
+            "\t<Response/>",
+            "\t<Condition>(proxy.pathsuffix MatchesPath \"{2}\") and (request.verb = \"PUT\")</Condition>",
+            "</Flow>"
+        ]
+    },
+    "Apigee Add Delete Flow": {
+		"prefix": "api-flow-delete",
+		"body": [
+            "<Flow name=\"${1:Flow}\">",
+            "\t<Description/>",
+            "\t<Request/>",
+            "\t<Response/>",
+            "\t<Condition>(proxy.pathsuffix MatchesPath \"{2}\") and (request.verb = \"DELETE\")</Condition>",
+            "</Flow>"
+        ]
+	}
+}

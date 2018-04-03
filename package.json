@@ -37,6 +37,10 @@
             {
                 "language": "xml",
                 "path": "./snippets/extension.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/flows.json"
             }
         ]
     }
