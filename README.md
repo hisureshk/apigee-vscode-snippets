@@ -71,6 +71,16 @@ Type part of a snippet, press `enter`, and the snippet unfolds.
 | `api-ext-statisticscollector`| `StatisticsCollector` Policy                                 |
 | `api-ext-messagelogging`     | `MessageLogging` Policy                                      |
 
+### Apigee Flow Snippets
+
+| Snippet                      | Policy                                                       |
+| ---------------------------- | ------------------------------------------------------------ |
+| `api-flow-post`              | Adds POST flow with path                                     |
+| `api-flow-get`     	       | Adds GET flow with path                                      |
+| `api-flow-put`    	       | Adds PUT flow with path                                      |
+| `api-flow-delete`            | Adds DELETE flow with path                                   |
+
+
 Alternatively, press `Ctrl`+`Space` (Windows, Linux) or `Cmd`+`Space` (OSX) to activate snippets from within the editor.
 
 ## Installation
