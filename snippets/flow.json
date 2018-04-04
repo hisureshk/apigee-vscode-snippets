@@ -46,7 +46,6 @@
     "Apigee Flow Step": {
 		"prefix": "api-flow-step",
 		"body": [
-            "<!-- Step requires mandatory Policy name and optional condition and fault rules. -->",
             "<Step>",
             "\t<Condition>${2}</Condition>",
             "\t<FaultRules/>",
