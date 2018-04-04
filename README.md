@@ -79,13 +79,14 @@ Type part of a snippet, press `enter`, and the snippet unfolds.
 | `api-flow-get`     	       | Adds GET flow with path                                      |
 | `api-flow-put`    	       | Adds PUT flow with path                                      |
 | `api-flow-delete`            | Adds DELETE flow with path                                   |
+| `api-flow-step`              | Adds Step to the Flow                                        |
 
 
 Alternatively, press `Ctrl`+`Space` (Windows, Linux) or `Cmd`+`Space` (OSX) to activate snippets from within the editor.
 
 ## Installation
 
-1. Install Visual Studio Code 1.17.0 or higher
+1. Install Visual Studio Code 1.12.0 or higher
 1. Launch Code
 1. From the command palette `Ctrl`-`Shift`-`P` (Windows, Linux) or `Cmd`-`Shift`-`P` (OSX)
 1. Select `Install Extension`
