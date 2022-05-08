@@ -12,7 +12,7 @@ See the [CHANGELOG](CHANGELOG.md) for the latest changes
 
 Type part of a snippet, press `enter`, and the snippet unfolds.
 
-### Apigee Traffice Management Policies
+### Apigee Traffic Management Policies
 
 | Snippet                      | Policy                                                       |
 | ---------------------------- | ------------------------------------------------------------ |
@@ -27,23 +27,23 @@ Type part of a snippet, press `enter`, and the snippet unfolds.
 
 ### Apigee Security Policies
 
-| Snippet                         	 | Policy                                             |
+| Snippet                         	     | Policy                                             |
 | -------------------------------------- | -------------------------------------------------- |
-| `api-sec-basicauthentication`   	 | `BasicAuthentication` Policy                       |
-| `api-sec-xmlthreatprotection`	  	 | `XMLThreatProtection` Policy                       |
-| `api-sec-jsonthreatprotection`  	 | `JSONThreatProctection` Policy                     |
+| `api-sec-basicauthentication`   	     | `BasicAuthentication` Policy                       |
+| `api-sec-xmlthreatprotection`	  	     | `XMLThreatProtection` Policy                       |
+| `api-sec-jsonthreatprotection`  	     | `JSONThreatProctection` Policy                     |
 | `api-sec-regularexpressionprotection`  | `RegularExpressionProtection` Policy               |
-| `api-sec-oauthv2`         		 | `OAuth2` Policy                                    |
-| `api-sec-getoauthv2info`       	 | `GetOAuth2Info` Policy                             |
-| `api-sec-setoauthv2info`     		 | `SetOAuth2Info` Policy                             |
+| `api-sec-oauthv2`         		     | `OAuth2` Policy                                    |
+| `api-sec-getoauthv2info`       	     | `GetOAuth2Info` Policy                             |
+| `api-sec-setoauthv2info`     		     | `SetOAuth2Info` Policy                             |
 | `api-sec-deleteoauthv2info` 	         | `DeleteOAuth2Info` Policy                          |    
-| `api-sec-verifyapikey`      		 | `VerifyAPIKey` Policy                              |
-| `api-sec-accesscontrol`     		 | `AccessControl` Policy                             |
+| `api-sec-verifyapikey`      		     | `VerifyAPIKey` Policy                              |
+| `api-sec-accesscontrol`     		     | `AccessControl` Policy                             |
 | `api-sec-generatesamlassertion`        | `GenerateSAMLAssertion` Policy                     |    
 | `api-sec-validatesamlassertion`        | `ValidateSAMLAssertion` Policy                     |
-| `api-sec-generatejwt`     		 | `GenerateJWT` Policy                               |
-| `api-sec-verifyjwt`       		 | `VerifyJWT` Policy                                 |    
-| `api-sec-decodejwt`       		 | `DecodeJWT` Policy                                 |    
+| `api-sec-generatejwt`     		     | `GenerateJWT` Policy                               |
+| `api-sec-verifyjwt`       		     | `VerifyJWT` Policy                                 |    
+| `api-sec-decodejwt`       		     | `DecodeJWT` Policy                                 |    
 
 ### Apigee Mediation Policies
 
@@ -87,10 +87,10 @@ Alternatively, press `Ctrl`+`Space` (Windows, Linux) or `Cmd`+`Space` (OSX) to a
 ## Installation
 
 1. Install Visual Studio Code 1.12.0 or higher
-1. Launch Code
-1. From the command palette `Ctrl`-`Shift`-`P` (Windows, Linux) or `Cmd`-`Shift`-`P` (OSX)
-1. Select `Install Extension`
-1. Choose the extension
-1. Reload Visual Studio Code
+2. Launch Code
+3. From the command palette `Ctrl`-`Shift`-`P` (Windows, Linux) or `Cmd`-`Shift`-`P` (OSX)
+4. Select `Install Extension`
+5. Choose the extension
+6. Reload Visual Studio Code
 
 ![Install Extension](images/install-extension.gif)
